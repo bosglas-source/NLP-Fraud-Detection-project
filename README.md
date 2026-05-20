@@ -6,6 +6,7 @@ Public Procurement Collusion & Fraud Detector
 ![UI](https://img.shields.io/badge/UI-Streamlit-red)
 
 👥 The Team
+
 [Malcolm Palmer] - Role ()
 
 [Nourhene Ben Juddou] - Role ()
