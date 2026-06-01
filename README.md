@@ -53,8 +53,7 @@ The roadmap covers a **16 working day sprint** starting from 26 May, broken down
 ### Phase 1 — Problem Framing & Data (May 26-28)
 Establishing ground truth definitions, data parameters, and the core tasks.
 
-* **Choose Dataset:** * *Option A (Recommended):* OpenTender.eu export for 1-2 target countries (e.g., Romania + Bulgaria — representing high historical irregularity rates). Extracted via REST API or packaged CSV.
-  * *Option B:* DIGIWHIST dataset (Harvard Dataverse) — pre-cleaned data inclusive of calculated corruption risk scores per contract.
+* **Choose Dataset:** * OpenTender.eu export for 1-2 target countries, we chose Ireland + Romania. Extracted in JSON.
 * **Define Labels:** Construct proxy indicators to act as our ground truth targets: `single_bid` (0/1), `winner_concentration` (0/1), and `short_tender_period` (0/1). These forms a multi-label setup for final evaluation.
 * **Define NLP Tasks:** 1. *Binary/Multi-label Classification:* Identify clean vs. suspicious entries.
   2. *Semantic Similarity:* Scan for copy-paste notice duplication.
