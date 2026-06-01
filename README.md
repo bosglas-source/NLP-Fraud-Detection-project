@@ -132,7 +132,7 @@ Consolidating final repository standards, pipeline testing routines, and present
 
 ---
 
-## 🏗️ 5. Recommended System Architecture
+## 🏗️ 5. System Architecture
 
 The analytical application relies on three distinct decoupled steps configured to optimize computation footprint and pipeline costs:
 
@@ -149,23 +149,8 @@ $$\text{Flagged Suspicious Notice} \longrightarrow \text{FAISS Legal Document In
 
 ---
 
-## 📊 6. Grading Rubric Alignment
-The team-based software repository contributes **40% of the course weight** (scaled across 30 total points).
-
-| Evaluation Criterion | Targets & Minimum Implementations |
-| :--- | :--- |
-| **Problem Framing & Design (6 Pts)** | Coherent definition of targeted procurement fraud typologies, proper dataset ingestion rationale, and clear cross-lingual text mapping boundaries. |
-| **Code Quality & Reproducibility (8 Pts)** | Fully normalized Git code layouts, strict `requirements.txt` environment locks, and pristine execution passes across all notebooks in clean virtual environments. |
-| **Technical Soundness (8 Pts)** | Rigorous technical validation of modeling pathways (e.g., transformer embedding setups, fine-tuning choices, and architectural reasoning behind the local vector indexes). |
-| **Evaluation Methodology (5 Pts)** | Proper handling of severe target label class imbalances via F1 and PR-AUC calculations, complemented by formal RAGAS evaluation arrays. |
-| **Presentation Clarity (3 Pts)** | Strict coordination across the 15-minute demo block, concluding with a functional live pipeline run across real procurement samples. |
-
----
-
-## 🚀 7. Recommended Data Ingestion Repositories
+## 🚀 7. Data Ingestion Repositories
 * **[OpenTender.eu](https://opentender.eu):** Provides access to structured versions of historical TED data. Features internal risk index parameters (`single_bid`, `tender_period`). Excellent for generating clean target labels.
-* **[TED CSV Bulk Export](https://data.europa.eu):** The raw, official publishing baseline of all 24 official EU language fields. Highly complete, but requires specialized token cleaning loops.
-* **[DIGIWHIST Dataset (Harvard Dataverse)](https://dataverse.harvard.edu):** Curated repository of academic-grade public tenders. Includes computed corruption proxy indicators per entry, making it an ideal choice for supervised workflows.
 
 ---
 
