@@ -15,7 +15,7 @@ Developed for Bologna Buisness School - Master's in AI & Innovation Management
 ---
 
 ## 1. Project Overview
-Public procurement accounts for roughly 14% of EU GDP. Irregularities—ranging from bid rigging and single-tendering abuse to inflated contract values and winner concentration—cost European taxpayers an estimated **EUR 5-25 billion per year**. 
+Public procurement accounts for roughly 14% of EU GDP. Irregularities; ranging from bid rigging and single-tendering abuse to inflated contract values and winner concentration, cost European taxpayers an estimated **EUR 5-25 billion per year**. 
 
 This project tackles this systemic problem by building a multi-layered NLP framework that ingests, cleans, analyzes, and explains potential fraud patterns within public sector data.
 
