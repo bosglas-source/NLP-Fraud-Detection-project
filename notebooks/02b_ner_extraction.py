@@ -18,7 +18,8 @@ df_sample = df.sample(1000, random_state=42).copy()
 extracted_orgs = []
 extracted_locs = []
 
-for doc in nlp.pipe(df_sample['cleaned_description'].astype(str), batch_size=50):
+# FIX: 'cleaned_description' does not exist; correct column is 'description'
+for doc in nlp.pipe(df_sample['description'].astype(str), batch_size=50):
     orgs = [ent.text for ent in doc.ents if ent.label_ == "ORG"]
     locs = [ent.text for ent in doc.ents if ent.label_ == "GPE" or ent.label_ == "LOC"]
     
