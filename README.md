@@ -47,14 +47,14 @@ Our pipeline focuses on identifying specific "red flags" defined by procurement 
 ## 📅 2. Project Timeline
 The roadmap covers a **16 working day sprint** starting from 26 May, broken down into 6 distinct phases leading up to the final evaluation.
 
-| Phase | Focus | Dates | Duration |
+| Phase | Focus |
 | :--- | :--- | :--- | :--- |
-| **Phase 1** | Problem Framing & Data Definition | May 26–28 | 3 Days |
-| **Phase 2** | Text Preprocessing & EDA | May 28–31 | 3 Days |
-| **Phase 3** | Feature Engineering & Embeddings | Jun 01–04 | 4 Days |
-| **Phase 4** | NLP Model & Detection Pipeline | Jun 04–07 | 4 Days |
-| **Phase 5** | RAG + LLM Explainability Layer | Jun 07–09 | 2 Days |
-| **Phase 6** | Evaluation, Repository Cleanup & Presentation | Jun 09–11 | 2 Days |
+| **Phase 1** | Problem Framing & Data Definition |
+| **Phase 2** | Text Preprocessing & EDA | 
+| **Phase 3** | Feature Engineering & Embeddings | 
+| **Phase 4** | NLP Model & Detection Pipeline | 
+| **Phase 5** | RAG + LLM Explainability Layer | 
+| **Phase 6** | Evaluation, Repository Cleanup & Presentation | 
 
 ---
 
@@ -158,6 +158,38 @@ The analytical application relies on three distinct, decoupled layers configured
 
 ## 🚀 7. Data Ingestion Repositories
 * **[OpenTender.eu](https://opentender.eu):** Provides access to structured versions of historical TED data. Features internal risk index parameters (`single_bid`, `tender_period`). Excellent for generating clean target labels.
+
+---
+
+graph TD
+    A[Input Data: 139k Ireland Contract Notices] -->|Cleaned Data| B(Layer 1: Classical Baseline)
+    
+    subgraph Layer 1: Heuristic Flags
+        B -->|Flags| B1[Lack of Comp | Short Window]
+    end
+    
+    subgraph Layer 1: spaCy NER
+        B -->|Extract| B2[ORG & LOC Entity Links]
+    end
+    
+    B1 -->|Structural Flags| D(Layer 3: RAG Explainability)
+    B2 -->|Metadata Vectors| C(Layer 2: Neural Anomaly Block)
+    
+    subgraph Layer 2: Vector Space
+        C -->|Encode| C1[MPNet Transformer]
+        C1 -->|Outliers| C2[Isolation Forest]
+        C1 -->|Similarity| C3[Cosine Matrix]
+    end
+    
+    C2 -->|Top 5% Flag| D
+    C3 -->|Top 5% Flag| D
+    
+    subgraph Layer 3: Auditor Co-Pilot
+        D -->|Retrieve| D1[FAISS: EU Directives Chunks]
+        D -->|Generate| D2[GPT-4o-mini LangChain]
+    end
+    
+    D2 -->|Final Output| E[JSON RISK AUDIT REPORT]
 
 ---
 
