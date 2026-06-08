@@ -19,7 +19,7 @@ Public procurement accounts for roughly 14% of EU GDP. Irregularities; ranging f
 
 This project tackles this systemic problem by building a multi-layered NLP framework that ingests, cleans, analyzes, and explains potential fraud patterns within public sector data.
 
-## Ethical Context
+## 2. Ethical Context
 ⚠️ Legal & Ethical Disclaimer
 
 **Academic Purpose Only:** This project is an experimental prototype developed solely for academic purposes as part of our Master's degree program. It is not intended for, nor should it be used for, actual legal, financial, or regulatory auditing, compliance, or enforcement.
@@ -44,86 +44,7 @@ Our pipeline focuses on identifying specific "red flags" defined by procurement 
 
 ---
 
-## 📅 2. Project Timeline
-The roadmap covers a **16 working day sprint** starting from 26 May, broken down into 6 distinct phases leading up to the final evaluation.
-
-| Phase | Focus |
-| :--- | :--- | :--- | :--- |
-| **Phase 1** | Problem Framing & Data Definition |
-| **Phase 2** | Text Preprocessing & EDA | 
-| **Phase 3** | Feature Engineering & Embeddings | 
-| **Phase 4** | NLP Model & Detection Pipeline | 
-| **Phase 5** | RAG + LLM Explainability Layer | 
-| **Phase 6** | Evaluation, Repository Cleanup & Presentation | 
-
----
-
-## 🔧 3. Phase Details
-
-### Phase 1 — Problem Framing & Data (May 26-28)
-Establishing ground truth definitions, data parameters, and the core tasks.
-
-* **Choose Dataset:** * OpenTender.eu export for 1-2 target countries, we chose Ireland + Romania. Extracted in JSON.
-* **Define Labels:** Construct proxy indicators to act as our ground truth targets: `single_bid` (0/1), `winner_concentration` (0/1), and `short_tender_period` (0/1). These forms a multi-label setup for final evaluation.
-* **Define NLP Tasks:** 1. *Binary/Multi-label Classification:* Identify clean vs. suspicious entries.
-  2. *Semantic Similarity:* Scan for copy-paste notice duplication.
-  3. *Named Entity Recognition (NER):* Extract and cross-reference companies and buyers.
-  4. *LLM Explanation:* Generate structured risk reports for flag vectors.
-* **Deliverable:** Initial repository scaffolding with draft README containing dataset cards, label specifications, task breakdowns, and an annotated sample comparison (clean vs. suspicious).
-
-### Phase 2 — Text Preprocessing & EDA (May 28-31)
-Building the ingestion and preprocessing backbone to handle multilingual, noisy HTML-laden procurement texts.
-
-* **Language Detection:** Run `langdetect` or `langid.py` over the target text field. Isolate and flag cross-lingual mismatches (e.g., a Spanish text layout filed by a Romanian buyer).
-* **Text Cleaning:** Strip HTML tags, boilerplate legal headers, and CPV code strings using custom regex pipelines compiled into a unified `spaCy` text cleaner.
-* **Tokenization:** Tokenize using `spaCy` (`xx_core_web_sm`). Compare token counts dynamically against `tiktoken` to benchmark context limits for the downstream LLM modules.
-* **Exploratory Data Analysis:** Profile contract distributions on log scales, map label imbalances (historically around 10-20% anomalies), check CPV distribution, and construct tender period histograms.
-* **Deliverable:** Notebook `01_preprocessing_eda.ipynb` and the fully processed `contracts_clean.csv`.
-
-### Phase 3 — Feature Engineering & Embeddings (June 1-4)
-Transitioning from classical matrix representations to deep multilingual space configurations.
-
-* **TF-IDF Baseline:** Build a sparse text matrix (`TfidfVectorizer(sublinear_tf=True, max_features=50000)`) to act as our benchmark text layer.
-* **Structured Features:** Extract numerical indicators—`contract_value_ratio` (awarded vs estimated), `n_bidders`, `tender_duration_days`, and `buyer_winner_pair_frequency`—and stack them horizontally with our text features.
-* **Multilingual Embeddings:** Generate sentence vectors using the pre-trained `paraphrase-multilingual-mpnet-base-v2` transformer model (768 dimensions, supports 50+ languages).
-* **Similarity Detection:** Apply batch cosine similarity to detect parallel descriptions across separate buying authorities. An unsupervised similarity threshold of $>0.92$ tags potential copy-paste collusions.
-* **NER for Entity Linking:** Deploy `dslim/bert-base-NER` or a multilingual XLM-RoBERTa equivalent to parse and structure `ORG` identifiers to chart hidden shell company profiles.
-* **Deliverable:** Notebook `02_features_embeddings.ipynb` along with stored vectors `embeddings.npy`, `contract_ids.csv`, and extracted entities in `ner_entities.csv`.
-
-### Phase 4 — NLP Model & Detection Pipeline (June 4-7)
-Constructing models that span classical estimators to fine-tuned transformer networks.
-
-* **Baseline Estimators:** Fit `LogisticRegression` and `LinearSVC` classifiers over the text TF-IDF space. Employ `class_weight='balanced'` handling to balance skewed label footprints. Evaluation is anchored on Precision, Recall, F1-Score, and PR-AUC.
-* **Embedding Classifiers:** Train linear models directly over the concatenated transformer embeddings and structured feature vectors, measuring improvements over the baseline.
-* **Anomaly Detection:** Execute `IsolationForest` and `DBSCAN` over target embedding spaces to identify outliers completely unsupervised. Project clusters down using UMAP or t-SNE vectors.
-* **Transformer Fine-Tuning:** Perform parameter updates on `mBERT` or `XLM-RoBERTa` models using the HuggingFace `Trainer` loop. Use LoRA/QLoRA if processing under constrained GPU environments.
-* **Error Analysis:** Conduct a deep dive into false positives and false negatives to diagnose structural model vulnerabilities across specific contract domains.
-* **Deliverable:** Notebook `03_detection_models.ipynb` and serialized model files alongside a unified model metrics benchmark panel.
-
-### Phase 5 — RAG + LLM Explainability Layer (June 7-9)
-Injecting a Retrieval-Augmented Generation layout to ensure all generated audit summaries remain fully grounded in legal realities.
-
-> 💡 **Why RAG?** Plain LLM prompting introduces unacceptable hallucination risks when evaluating legal compliance. A local RAG framework guarantees that final text explanations are explicitly cross-referenced with actual statutory text.
-
-* **Document Corpus:** Chunk EU Directive 2014/24/EU (Public Procurement), OLAF anti-fraud guidelines, and OpenTender fraud typologies into 400-token blocks featuring a 50-token window overlap.
-* **Vector Store:** Ingest structural blocks into a local `FAISS` index using the primary `sentence-transformer` embedding model. Retrieve the top $k=5$ most relevant legal criteria context vectors.
-* **RAG Pipeline:** Develop a `LangChain` execution frame connecting: `Contract Notice` $\rightarrow$ `Dense Retrieval Search` $\rightarrow$ `Context-Augmented Prompt Construction` $\rightarrow$ `LLM Generation`.
-* **Structured Output:** Enforce strict JSON object output templates (`risk_score`, `risk_factors`, `regulation_references`, `explanation`) leveraging Pydantic AI or custom engine function-calling parameters.
-* **RAGAS Evaluation:** Programmatically grade pipeline output metrics checking for *faithfulness*, *answer relevance*, and *context precision* across 20-30 curated testing indices.
-* **Deliverable:** Notebook `04_rag_explainability.ipynb`, `ragas_results.json`, and an operational terminal CLI utility (`analyze_contract.py --id XYZ`).
-
-### Phase 6 — Evaluation, Repository & Presentation (June 9-11)
-Consolidating final repository standards, pipeline testing routines, and presentation assets.
-
-* **Final Evaluation:** Compile metrics across all experiments into a clean summary table containing classification logs, PR-AUC charts, and target RAGAS scores.
-* **Repository Cleanup:** Standardize configurations for `requirements.txt`, `.gitignore`, and download utilities (`data/download_data.sh`). Ensure raw source text fields are not committed.
-* **Reproducibility Check:** Run full end-to-end sandbox execution audits of all 4 notebooks in empty Google Colab spaces to isolate path or dependency collisions.
-* **Presentation Build:** Map presentation flow into a tight 15-minute sequence (Problem/Data $\rightarrow$ Pipe Architecture $\rightarrow$ Performance Metrics $\rightarrow$ RAG Live Demo $\rightarrow$ Technical Frontiers).
-* **Oral Exam Prep:** Complete group synchronization to defend architecture selections independently (e.g., explaining transformer embeddings selection, cross-lingual choices, or model quantization metrics).
-
----
-
-## 🛠️ 4. Full NLP Technology Stack
+## 🛠️ 3. Full NLP Technology Stack
 
 | Layer | Tool / Model | Course Module Alignment |
 | :--- | :--- | :--- |
@@ -139,7 +60,7 @@ Consolidating final repository standards, pipeline testing routines, and present
 
 ---
 
-## 🏗️ 5. System Architecture
+## 🏗️ 4. System Architecture
 
 The analytical application relies on three distinct, decoupled layers configured to optimize computation footprint, eliminate unnecessary API costs, and prevent LLM hallucination:
 
@@ -153,13 +74,6 @@ The analytical application relies on three distinct, decoupled layers configured
 **Flagged Notice** ➔ **FAISS Legal Index Query** ➔ **Context-Injected Prompt** ➔ **LLM Processing** ➔ **JSON Risk Report**
 
 > 📌 **Architectural Note:** Layers 1 and 2 run completely local and offline in batch processing configurations at negligible compute cost. Layer 3 (External LLM API invocation) triggers dynamically *only* when a record successfully breaches the anomaly thresholds set by Layer 2. This cascading structure maintains tight latency boundaries, manages production API budgets efficiently, and prevents the LLM from wasting time on safe, boilerplate contracts.
-
----
-
-## 🚀 7. Data Ingestion Repositories
-* **[OpenTender.eu](https://opentender.eu):** Provides access to structured versions of historical TED data. Features internal risk index parameters (`single_bid`, `tender_period`). Excellent for generating clean target labels.
-
----
 
 ```mermaid
 graph TD
@@ -189,6 +103,11 @@ graph TD
     GPT --> Final{JSON Risk Report}
 
 ```
+
+---
+
+## 🚀 5. Data Ingestion Repositories
+* **[OpenTender.eu](https://opentender.eu):** Provides access to structured versions of historical TED data. Features internal risk index parameters (`single_bid`, `tender_period`).
 
 ---
 
