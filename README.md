@@ -58,37 +58,6 @@ The roadmap covers a **16 working day sprint** starting from 26 May, broken down
 
 ---
 
-```mermaid
-graph TD
-    Data[Input: 139k Contract Notices] --> L1
-
-    subgraph Layer_1 [Layer 1: Classical Baseline]
-        L1[Cleaned Text] --> Flags[Heuristic Flags]
-        L1 --> NER[spaCy NER]
-    end
-
-    Flags -->|Structural Risk| L3
-    NER -->|Metadata Vectors| L2
-
-    subgraph Layer_2 [Layer 2: Neural Anomalies]
-        L2[MPNet Vectors] --> Iso[Isolation Forest]
-        L2 --> Cos[Cosine Similarity]
-    end
-
-    Iso -->|Top 5% Flag| L3
-    Cos -->|Top 5% Flag| L3
-
-    subgraph Layer_3 [Layer 3: RAG Engine]
-        L3[LangChain Prompt] -.-> DB[(FAISS Legal DB)]
-        L3 --> GPT[LLM Generation]
-    end
-
-    GPT --> Final{JSON Risk Report}
-
-```
-
----
-
 ## 🔧 3. Phase Details
 
 ### Phase 1 — Problem Framing & Data (May 26-28)
@@ -191,6 +160,39 @@ The analytical application relies on three distinct, decoupled layers configured
 * **[OpenTender.eu](https://opentender.eu):** Provides access to structured versions of historical TED data. Features internal risk index parameters (`single_bid`, `tender_period`). Excellent for generating clean target labels.
 
 ---
+
+```mermaid
+graph TD
+    A[Input Data: 139k Ireland Contract Notices] -->|Cleaned Data| B(Layer 1: Classical Baseline)
+    
+    subgraph Layer 1: Heuristic Flags
+        B -->|Flags| B1[Lack of Comp | Short Window]
+    end
+    
+    subgraph Layer 1: spaCy NER
+        B -->|Extract| B2[ORG & LOC Entity Links]
+    end
+    
+    B1 -->|Structural Flags| D(Layer 3: RAG Explainability)
+    B2 -->|Metadata Vectors| C(Layer 2: Neural Anomaly Block)
+    
+    subgraph Layer 2: Vector Space
+        C -->|Encode| C1[MPNet Transformer]
+        C1 -->|Outliers| C2[Isolation Forest]
+        C1 -->|Similarity| C3[Cosine Matrix]
+    end
+    
+    C2 -->|Top 5% Flag| D
+    C3 -->|Top 5% Flag| D
+    
+    subgraph Layer 3: Auditor Co-Pilot
+        D -->|Retrieve| D1[FAISS: EU Directives Chunks]
+        D -->|Generate| D2[GPT-4o-mini LangChain]
+    end
+    
+    D2 -->|Final Output| E[JSON RISK AUDIT REPORT]
+
+```
 
 ## 📂 8. Repository Structure Diagram
 
