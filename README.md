@@ -146,13 +146,13 @@ Consolidating final repository standards, pipeline testing routines, and present
 The analytical application relies on three distinct, decoupled layers configured to optimize computation footprint, eliminate unnecessary API costs, and prevent LLM hallucination:
 
 ### 🔹 Layer 1 — Classical Detection Baseline
-$$\text{Text + NER Flags} \longrightarrow \text{TF-IDF & Scaler} \longrightarrow \text{Logistic Regression} \longrightarrow \text{Baseline Risk Score}$$
+**Text + NER Flags** ➔ **TF-IDF & Scaler** ➔ **Logistic Regression** ➔ **Baseline Risk Score**
 
 ### 🔹 Layer 2 — Deep Vector Anomalies & Similarity
-$$\text{Contract Text} \longrightarrow \text{MPNet Transformer} \longrightarrow \text{Dense Vectors} \longrightarrow \text{Isolation Forest & Cosine} \longrightarrow \text{Anomaly Flag}$$
+**Contract Text** ➔ **MPNet Transformer** ➔ **Dense Vectors** ➔ **Isolation Forest & Cosine** ➔ **Anomaly Flag**
 
 ### 🔹 Layer 3 — RAG Explanation Engine
-$$\text{Flagged Notice} \longrightarrow \text{FAISS Legal Index Query} \longrightarrow \text{Context-Injected Prompt} \longrightarrow \text{LLM Processing} \longrightarrow \text{JSON Risk Report}$$
+**Flagged Notice** ➔ **FAISS Legal Index Query** ➔ **Context-Injected Prompt** ➔ **LLM Processing** ➔ **JSON Risk Report**
 
 > 📌 **Architectural Note:** Layers 1 and 2 run completely local and offline in batch processing configurations at negligible compute cost. Layer 3 (External LLM API invocation) triggers dynamically *only* when a record successfully breaches the anomaly thresholds set by Layer 2. This cascading structure maintains tight latency boundaries, manages production API budgets efficiently, and prevents the LLM from wasting time on safe, boilerplate contracts.
 
