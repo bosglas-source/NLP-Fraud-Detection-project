@@ -1,0 +1,494 @@
+[
+  {
+    "contract_id": "EU_cda2cf0296cb4f96bced16867490184de1b14eb165ce7c812727969f4390edeb_1",
+    "title": "Pelvic Floor and Endo Anal Ultrasound",
+    "buyer_name": "Health Service Executive (HSE)",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "NLP similarity red flag - copy-paste descriptions",
+        "topic": "copy paste",
+        "score": 0.1201902513740501,
+        "text": "Near-identical contract descriptions across different buyers can indicate reused templates, centralized procurement, framework agreements, or potentially tailored specifications. High cosine similarity should be treated as an investigative cue rather than a fraud conclusion. Human review should compare contract titles, buyers, CPV category, publication dates, and description details."
+      },
+      {
+        "source": "Academic prototype disclaimer",
+        "topic": "responsible use",
+        "score": 0.0,
+        "text": "This system is an academic decision-support prototype. A suspicious label, model score, similarity score, or anomaly flag is not evidence of fraud, collusion, or illegal behavior. Outputs should be framed as risk indicators requiring human review and additional source documentation."
+      },
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_99c5773943b6cf3376d500aa5239226b2f019d7f89dbe3e95df79a0e2a6c479e_1",
+    "title": "Insurance in respect of costs incurred to investigate aircraft accidents.",
+    "buyer_name": "Department of Transport, Tourism and Sport",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      },
+      {
+        "source": "Academic prototype disclaimer",
+        "topic": "responsible use",
+        "score": 0.0,
+        "text": "This system is an academic decision-support prototype. A suspicious label, model score, similarity score, or anomaly flag is not evidence of fraud, collusion, or illegal behavior. Outputs should be framed as risk indicators requiring human review and additional source documentation."
+      },
+      {
+        "source": "Unsupervised anomaly detection guidance",
+        "topic": "anomaly detection",
+        "score": 0.0,
+        "text": "Embedding-space anomalies are contracts whose language or metadata differ from the broader corpus. Isolation Forest flags unusual records without using fraud labels, so its results should be used to prioritize review rather than to classify misconduct. Stronger concern arises when anomaly flags overlap with interpretable procurement indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_ce67ea32c6df49def5d768b19470e8b7404e410018bfbaf9fe4061fdd37abc77_1",
+    "title": "Next Generation Sequencing.",
+    "buyer_name": "St James's Hospital",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "Academic prototype disclaimer",
+        "topic": "responsible use",
+        "score": 0.13974108951887182,
+        "text": "This system is an academic decision-support prototype. A suspicious label, model score, similarity score, or anomaly flag is not evidence of fraud, collusion, or illegal behavior. Outputs should be framed as risk indicators requiring human review and additional source documentation."
+      },
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      },
+      {
+        "source": "Unsupervised anomaly detection guidance",
+        "topic": "anomaly detection",
+        "score": 0.0,
+        "text": "Embedding-space anomalies are contracts whose language or metadata differ from the broader corpus. Isolation Forest flags unusual records without using fraud labels, so its results should be used to prioritize review rather than to classify misconduct. Stronger concern arises when anomaly flags overlap with interpretable procurement indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_906e4bc16191be50d813e9b01802e0e801039208c31e457f7bf4d5fdebaabb79_1",
+    "title": "DN150 (6 inch) Mobile Pump - Diesel Powered",
+    "buyer_name": "Office of Public Works (OPW)",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      },
+      {
+        "source": "Academic prototype disclaimer",
+        "topic": "responsible use",
+        "score": 0.0,
+        "text": "This system is an academic decision-support prototype. A suspicious label, model score, similarity score, or anomaly flag is not evidence of fraud, collusion, or illegal behavior. Outputs should be framed as risk indicators requiring human review and additional source documentation."
+      },
+      {
+        "source": "Unsupervised anomaly detection guidance",
+        "topic": "anomaly detection",
+        "score": 0.0,
+        "text": "Embedding-space anomalies are contracts whose language or metadata differ from the broader corpus. Isolation Forest flags unusual records without using fraud labels, so its results should be used to prioritize review rather than to classify misconduct. Stronger concern arises when anomaly flags overlap with interpretable procurement indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_c884ccae090d684088aceec23d149d354ef6355f4b693277bb619b754aae6e40_1",
+    "title": "Microsoft Surface Pro 7+ Tablets & Associated Accessories",
+    "buyer_name": "Courts Service",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      },
+      {
+        "source": "Academic prototype disclaimer",
+        "topic": "responsible use",
+        "score": 0.0,
+        "text": "This system is an academic decision-support prototype. A suspicious label, model score, similarity score, or anomaly flag is not evidence of fraud, collusion, or illegal behavior. Outputs should be framed as risk indicators requiring human review and additional source documentation."
+      },
+      {
+        "source": "Unsupervised anomaly detection guidance",
+        "topic": "anomaly detection",
+        "score": 0.0,
+        "text": "Embedding-space anomalies are contracts whose language or metadata differ from the broader corpus. Isolation Forest flags unusual records without using fraud labels, so its results should be used to prioritize review rather than to classify misconduct. Stronger concern arises when anomaly flags overlap with interpretable procurement indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_7e059041879d5de16c824bac0399a2db1309aff2fdc8b5820b47b418ad8e20d0_1",
+    "title": "Infant Ventilators for the Neonatal Intensive Care Unit.",
+    "buyer_name": "The National Maternity Hospital",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.13645446309783882,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      },
+      {
+        "source": "Academic prototype disclaimer",
+        "topic": "responsible use",
+        "score": 0.0,
+        "text": "This system is an academic decision-support prototype. A suspicious label, model score, similarity score, or anomaly flag is not evidence of fraud, collusion, or illegal behavior. Outputs should be framed as risk indicators requiring human review and additional source documentation."
+      },
+      {
+        "source": "Unsupervised anomaly detection guidance",
+        "topic": "anomaly detection",
+        "score": 0.0,
+        "text": "Embedding-space anomalies are contracts whose language or metadata differ from the broader corpus. Isolation Forest flags unusual records without using fraud labels, so its results should be used to prioritize review rather than to classify misconduct. Stronger concern arises when anomaly flags overlap with interpretable procurement indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_2133945180df86a053c62cf9d26efe2f9c3ac72ae91e5413f10b22230ff8f923_1",
+    "title": "A Single Truck Mounted Drill Rig for Geological Survey Ireland",
+    "buyer_name": "Department of Communications, Climate Action and Environment",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "EU procurement principle - competition",
+        "topic": "single bidding",
+        "score": 0.19704975687037152,
+        "text": "Single-bid procedures are a common procurement red flag because they may indicate weak competition, narrow specifications, limited market outreach, or a tender design that discouraged alternative bidders. A single-bid flag is not proof of misconduct, but it should prompt review of the procedure type, publication quality, deadlines, contract specificity, and buyer history."
+      },
+      {
+        "source": "EU procurement principle - equal treatment",
+        "topic": "short tender period",
+        "score": 0.11109348147087668,
+        "text": "A short advertisement or tender period can reduce effective competition because suppliers have less time to prepare bids. Reviewers should check whether the deadline was proportionate to contract complexity, whether urgency was justified, and whether the short period coincides with other red flags such as single bidding or repeated awards."
+      },
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_90a02313d1336c1e32da7161fad02bc8c39f8a18b5a264a8a15a7354e436b46d_1",
+    "title": "The supply of Parenteral Nutrition products.",
+    "buyer_name": "St Vincent's University Hospital",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      },
+      {
+        "source": "Academic prototype disclaimer",
+        "topic": "responsible use",
+        "score": 0.0,
+        "text": "This system is an academic decision-support prototype. A suspicious label, model score, similarity score, or anomaly flag is not evidence of fraud, collusion, or illegal behavior. Outputs should be framed as risk indicators requiring human review and additional source documentation."
+      },
+      {
+        "source": "Unsupervised anomaly detection guidance",
+        "topic": "anomaly detection",
+        "score": 0.0,
+        "text": "Embedding-space anomalies are contracts whose language or metadata differ from the broader corpus. Isolation Forest flags unusual records without using fraud labels, so its results should be used to prioritize review rather than to classify misconduct. Stronger concern arises when anomaly flags overlap with interpretable procurement indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_3ef30dfc109956a9d28ad9d8683c021f483d1805e8cc0980f97ed66c6fc1ad43_1",
+    "title": "DN200 (8 inch) Mobile Pump – Diesel Powered",
+    "buyer_name": "Office of Public Works (OPW)",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      },
+      {
+        "source": "Academic prototype disclaimer",
+        "topic": "responsible use",
+        "score": 0.0,
+        "text": "This system is an academic decision-support prototype. A suspicious label, model score, similarity score, or anomaly flag is not evidence of fraud, collusion, or illegal behavior. Outputs should be framed as risk indicators requiring human review and additional source documentation."
+      },
+      {
+        "source": "Unsupervised anomaly detection guidance",
+        "topic": "anomaly detection",
+        "score": 0.0,
+        "text": "Embedding-space anomalies are contracts whose language or metadata differ from the broader corpus. Isolation Forest flags unusual records without using fraud labels, so its results should be used to prioritize review rather than to classify misconduct. Stronger concern arises when anomaly flags overlap with interpretable procurement indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_5d47ee01d62f03d906552dd5faa2e22b05103201c2922501ccf4ecdb24195cc0_1",
+    "title": "EU Beef and Lamb",
+    "buyer_name": "Bord Bia (Irish Food Board)",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      },
+      {
+        "source": "Academic prototype disclaimer",
+        "topic": "responsible use",
+        "score": 0.0,
+        "text": "This system is an academic decision-support prototype. A suspicious label, model score, similarity score, or anomaly flag is not evidence of fraud, collusion, or illegal behavior. Outputs should be framed as risk indicators requiring human review and additional source documentation."
+      },
+      {
+        "source": "Unsupervised anomaly detection guidance",
+        "topic": "anomaly detection",
+        "score": 0.0,
+        "text": "Embedding-space anomalies are contracts whose language or metadata differ from the broader corpus. Isolation Forest flags unusual records without using fraud labels, so its results should be used to prioritize review rather than to classify misconduct. Stronger concern arises when anomaly flags overlap with interpretable procurement indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_0a3b5547af94972ea22aa64d6bf396deb56504664ce45bdcd33ede1b617aa211_1",
+    "title": "ITT for Digital Marketing in China",
+    "buyer_name": "Bord Bia (Irish Food Board)",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "EU procurement principle - equal treatment",
+        "topic": "short tender period",
+        "score": 0.11109348147087668,
+        "text": "A short advertisement or tender period can reduce effective competition because suppliers have less time to prepare bids. Reviewers should check whether the deadline was proportionate to contract complexity, whether urgency was justified, and whether the short period coincides with other red flags such as single bidding or repeated awards."
+      },
+      {
+        "source": "EU procurement principle - competition",
+        "topic": "single bidding",
+        "score": 0.09852487843518576,
+        "text": "Single-bid procedures are a common procurement red flag because they may indicate weak competition, narrow specifications, limited market outreach, or a tender design that discouraged alternative bidders. A single-bid flag is not proof of misconduct, but it should prompt review of the procedure type, publication quality, deadlines, contract specificity, and buyer history."
+      },
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  },
+  {
+    "contract_id": "EU_009bda8827c3dcb8a068b6d3a7737b4bf0f82824fa3dced497a5a70acc6547d5_1",
+    "title": "RFT for SAP (Sybase) Technical Support",
+    "buyer_name": "Central Statistics Office",
+    "risk_score": 10,
+    "risk_level": "high",
+    "risk_factors": [
+      "single_bid",
+      "copy_paste_description",
+      "embedding_anomaly",
+      "short_tender_period_observed_but_not_in_main_label"
+    ],
+    "retrieved_context": [
+      {
+        "source": "Academic prototype disclaimer",
+        "topic": "responsible use",
+        "score": 0.13974108951887182,
+        "text": "This system is an academic decision-support prototype. A suspicious label, model score, similarity score, or anomaly flag is not evidence of fraud, collusion, or illegal behavior. Outputs should be framed as risk indicators requiring human review and additional source documentation."
+      },
+      {
+        "source": "Model evaluation guidance - imbalanced labels",
+        "topic": "evaluation",
+        "score": 0.0,
+        "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+      },
+      {
+        "source": "Unsupervised anomaly detection guidance",
+        "topic": "anomaly detection",
+        "score": 0.0,
+        "text": "Embedding-space anomalies are contracts whose language or metadata differ from the broader corpus. Isolation Forest flags unusual records without using fraud labels, so its results should be used to prioritize review rather than to classify misconduct. Stronger concern arises when anomaly flags overlap with interpretable procurement indicators."
+      }
+    ],
+    "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+    "human_review_questions": [
+      "Was the tender specification broad enough to allow meaningful competition?",
+      "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+      "What language or metadata makes this notice unusual compared with the corpus?",
+      "Can the risk signal be verified against the original tender notice and award documentation?"
+    ],
+    "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+  }
+]
