@@ -129,35 +129,32 @@ Consolidating final repository standards, pipeline testing routines, and present
 
 | Layer | Tool / Model | Course Module Alignment |
 | :--- | :--- | :--- |
-| **Preprocessing** | `spaCy` (multilingual), `langdetect`, `NLTK` | Module 1: Foundational Text Processing |
-| **Vectorization** | `scikit-learn` (`TfidfVectorizer`) | Module 2: Text Representations |
-| **Word Embeddings** | `FastText` (multilingual) | Module 2: Vector Space Configurations |
-| **Sentence Embeddings** | `paraphrase-multilingual-mpnet-base-v2` | Module 2: Contextual Vectors |
-| **Classification Baseline**| `LogisticRegression` / `LinearSVC` + TF-IDF | Module 2: Classical Classification |
-| **Embedding Classifier** | `LogisticRegression` on Sentence Vectors | Module 2: Neural Token Embeddings |
-| **Anomaly Detection** | `IsolationForest` / `DBSCAN` (on Embeddings) | Module 2 & 3: Unsupervised Landscapes |
-| **NER Extraction** | `XLM-RoBERTa NER` | Module 3: Sequence Labeling |
-| **Deep Classifier** | Fine-Tuned `mBERT` / `XLM-RoBERTa` (HF) | Module 3: Transformer Networks |
-| **RAG Pipeline** | `LangChain` + `FAISS` + `sentence-transformers` | Module 4: Generative Frameworks |
-| **Structured Output** | Function Calling / `Pydantic AI` (JSON Format) | Module 4: Production LLM Design |
-| **Evaluation Framework** | `scikit-learn metrics`, `RAGAS`, LLM-as-a-Judge | Module 4 & 5: Validation & LLMOps |
+| **Data Preprocessing** | `pandas`, `re` (Regex) | Module 1: Foundational Text Processing |
+| **Text Vectorization** | `scikit-learn` (`TfidfVectorizer`) | Module 2: Text Representations |
+| **Sentence Embeddings** | `sentence-transformers` (`paraphrase-multilingual-mpnet-base-v2`) | Module 2: Contextual Vectors |
+| **Classification Models** | `LogisticRegression` (TF-IDF & Structured Features) | Module 2: Classical Classification |
+| **Anomaly Detection** | `IsolationForest` (on Embeddings) | Module 2 & 3: Unsupervised Landscapes |
+| **NER Extraction** | `spaCy` (`en_core_web_trf` Transformer Pipeline) | Module 3: Sequence Labeling |
+| **RAG Pipeline** | `LangChain`, `FAISS`, `OpenAI` (`gpt-4o-mini`) | Module 4: Generative Frameworks |
+| **Structured Output** | `Pydantic` (JSON Schema Constraints) | Module 4: Production LLM Design |
+| **Evaluation Framework** | `scikit-learn` metrics (PR-AUC, Precision, Recall) | Module 4 & 5: Validation |
 
 ---
 
 ## 🏗️ 5. System Architecture
 
-The analytical application relies on three distinct decoupled steps configured to optimize computation footprint and pipeline costs:
+The analytical application relies on three distinct, decoupled layers configured to optimize computation footprint, eliminate unnecessary API costs, and prevent LLM hallucination:
 
 ### 🔹 Layer 1 — Classical Detection Baseline
-$$\text{Contract Description Text + Structured Features} \longrightarrow \text{TF-IDF Vectorization} \longrightarrow \text{Logistic Regression / LinearSVC} \longrightarrow \text{Binary Label + Confidence Score}$$
+$$\text{Text + NER Flags} \longrightarrow \text{TF-IDF & Scaler} \longrightarrow \text{Logistic Regression} \longrightarrow \text{Baseline Risk Score}$$
 
-### 🔹 Layer 2 — Neural Detection
-$$\text{Contract Description Text} \longrightarrow \text{Multilingual Sentence-Transformer Encoder} \longrightarrow \text{Dense Vector Space + Metadata Features} \longrightarrow \text{Classifier Head} \longrightarrow \text{Anomalous Vector Flag + Copy-Paste Cosine Verification}$$
+### 🔹 Layer 2 — Deep Vector Anomalies & Similarity
+$$\text{Contract Text} \longrightarrow \text{MPNet Transformer} \longrightarrow \text{Dense Vectors} \longrightarrow \text{Isolation Forest & Cosine} \longrightarrow \text{Anomaly Flag}$$
 
-### 🔹 Layer 3 — RAG Explanation
-$$\text{Flagged Suspicious Notice} \longrightarrow \text{FAISS Legal Document Index Query} \longrightarrow \text{Context-Injected System Prompt} \longrightarrow \text{LLM Processing} \longrightarrow \text{Structured JSON Risk Audit Report}$$
+### 🔹 Layer 3 — RAG Explanation Engine
+$$\text{Flagged Notice} \longrightarrow \text{FAISS Legal Index Query} \longrightarrow \text{Context-Injected Prompt} \longrightarrow \text{LLM Processing} \longrightarrow \text{JSON Risk Report}$$
 
-> 📌 **Architectural Note:** Layers 1 and 2 run completely local and offline in batch processing configurations at negligible cost. Layer 3 (External LLM API invocation) triggers dynamically *only* when a record successfully breaches the anomaly thresholds set by Layer 2. This structure maintains tight latency boundaries and manages production API budgets efficiently.
+> 📌 **Architectural Note:** Layers 1 and 2 run completely local and offline in batch processing configurations at negligible compute cost. Layer 3 (External LLM API invocation) triggers dynamically *only* when a record successfully breaches the anomaly thresholds set by Layer 2. This cascading structure maintains tight latency boundaries, manages production API budgets efficiently, and prevents the LLM from wasting time on safe, boilerplate contracts.
 
 ---
 
