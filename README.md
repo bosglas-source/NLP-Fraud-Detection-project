@@ -39,9 +39,7 @@ Our pipeline focuses on identifying specific "red flags" defined by procurement 
 * **Single-Bidding / Lack of Competition:** Only one tender is received for a given competitive contract.
 * **Winner Concentration:** The exact same supplier repeatedly wins contracts from the same public buyer.
 * **Abnormally Short Tender Period:** Insufficient or artificially narrow time windows allocated for competitors to submit bids.
-* **Contract Splitting:** Artificially dividing a large contract into smaller pieces to stay below mandatory publication thresholds.
 * **Copy-Paste Descriptions:** Identical or near-identical notices issued by different buyers, indicating potential collusion or pre-written specs.
-* **Value Discrepancy:** Significant variation between the initial estimated contract value and final awarded value.
 * **Entity-Linked Red Flags:** Shared addresses, contact information, or registration details across multiple distinct bidders (detected via NER).
 
 ---
