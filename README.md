@@ -114,19 +114,39 @@ graph TD
 ## 📂 8. Repository Structure Diagram
 
 ```text
-├── data/               # Local subdirectory for raw or processed inputs
-│   └── download_data.sh# Script utility to hit target OpenTender API nodes
+├── .gitignore          # Hides local large .csv and .npy files
+├── README.md           # Project documentation and architecture
+├── requirements.txt    # Frozen virtual environment package specifications
+├── analyze_contract.py # Deployment CLI hook: `python analyze_contract.py --id XYZ`
+│
+├── data/               # Ignored by Git (except safe mock samples)
+│   ├── sample_contracts.json       # Safe mock rows for GitHub viewers
+│   ├── contracts_ie_clean.csv      # (Local) Full preprocessed dataset
+│   ├── ner_features.csv            # (Local) Extracted entities and address flags
+│   └── embeddings.npy              # (Local) Deep MPNet dense vectors
+│
 ├── notebooks/          # Step-by-step modular pipeline notebooks
-│   ├── 01_preprocessing_eda.ipynb      # Phase 2: Ingestion, cleaning, language flags
-│   ├── 02_features_embeddings.ipynb    # Phase 3: TF-IDF, embeddings, NER extraction
-│   ├── 03_detection_models.ipynb      # Phase 4: Scikit-learn estimators & Transformers
-│   └── 04_rag_explainability.ipynb     # Phase 5: FAISS vector pipeline & RAGAS scores
-├── src/                # Modular library scripts
+│   ├── 01_preprocessing_eda.ipynb          # Phase 2: Cleaning, flattening, label definitions
+│   ├── 02_features_embeddings_clean.ipynb  # Phase 3: TF-IDF, MPNet embeddings, Cosine Similarity
+│   ├── 02b_ner_extraction.ipynb            # Phase 3: spaCy NER extraction & entity overlaps
+│   ├── 03_detection_models.ipynb           # Phase 4: Logistic Regression, Isolation Forest, Error Analysis
+│   └── 04_rag_explainability.ipynb         # Phase 5: FAISS vector DB & LangChain risk reports
+│
+├── src/                # Reusable modular library scripts
 │   ├── pipeline.py     # Global utility cleaning and data transforms
 │   └── rag.py          # Class definitions for the LangChain structure
-├── models/             # Serialized joblib configurations and target weights
-├── results/            # Performance score logging matrices, JSONs, and PR-AUC plots
-├── analyze_contract.py # Deployment CLI hook: `python analyze_contract.py --id XYZ`
-├── requirements.txt    # Frozen virtual environment package specifications
-├── .gitignore          # Repository block filter rules
-└── README.md           # Main documentation hub
+│
+├── models/             # Serialized classical ML models and scaling artifacts
+│   ├── tfidf_vectorizer.joblib
+│   ├── structured_scaler.joblib
+│   ├── model_logreg_tfidf.joblib
+│   └── model_logreg_tfidf_structured.joblib
+│
+└── results/            # Proof of Work: Evaluation metrics and audit reports
+    ├── model_comparison.csv            # Final precision, recall, and PR-AUC scores
+    ├── precision_recall_curves.png     # Visual evaluation metrics
+    ├── false_positives_sample.csv      # Error analysis diagnostics
+    ├── false_negatives_sample.csv      # Error analysis diagnostics
+    ├── risk_scores.png                 # Anomaly score distributions
+    ├── retrieved_contexts.csv          # Legal text fetched by FAISS
+    └── risk_report_demo.json           # Final LLM Output
