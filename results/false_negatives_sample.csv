@@ -1,0 +1,26 @@
+contract_id,title,buyer_name,single_bid,winner_concentration,copy_paste_description,target_suspicious,short_tender_period,predicted_label,predicted_probability
+IE_920063d70f1b863190b118512af04ac32faa4b1d6a28bb04188ee014fd5e2125_1,"Window Replacement Works at St. Joseph's National School, Terenure, Dublin 6",St. Joseph’s Boys National School (Dublin),,0,1,1,1.0,0,0.031977034891913225
+IE_56981904c0eb860eb75efce5176bef3e1902a14045a5d32b0611c6a069492458_1,Expressions of Interest - Donegal Bridge Rehabilitation Programme 2010,Donegal National Roads Design Office,,0,1,1,1.0,0,0.03215692006340407
+IE_74c232494e7f5e8d7e39dea60fa1641aae93eb8b69c3ddecf2b1cee7210e5602_1,St. Senan's National School Roof Upgrade & Associated Works.,St.Senan's National School (Shannon),,0,1,1,1.0,0,0.03222147958682112
+IE_b160b3a7b69b7defd38aa3f42a55827e049df95476868be0f876e18d04aefb75_1,Delivery of Retail Assessor Course & Retail Operations Training/Assessment,IBEC Retail Skillnet,,0,1,1,1.0,0,0.0379670098395105
+IE_9cef220b6df6abfe709b5cb4ebcbaa65cb4349a850aadb5b51b2523eac098150_1,"Redwood NS, Lorrha, Co Tipperary - Single Storey Classrooom Extension & Associated Works",Scoil Naomh Ruadhain (Redwood National School),,0,1,1,1.0,0,0.039117232164138434
+IE_5a715da7fef84c80d968ef547ec620d2ec451b8828170a08a4c838ac248f27f6_1,Cold Roll Forming Machine (1),Steel Formed Sections Ltd,,0,1,1,1.0,0,0.040023755907508896
+IE_fec95c0fe0679b391e14414117c192d3d54f83f1d315aa38f0f61b65d53df55d_1,Loughill National School - Gerald Griffin National School Loughill Roof works,Gerald Griffin National School,,0,1,1,1.0,0,0.04101378323475239
+IE_daf72217bf3b4e7944649a33e9eddf2c36b837ef3d1bcf9154e77a030cbd8b2f_1,Roof Works,St Kevins (Baile),,0,1,1,1.0,0,0.043648939103923354
+IE_1f668670a8aebb4b203296010ca88111c65a96c74e82ffaa924a648a6d86f1e5_1,Award of Invitation to tender for the Design of Campus Masterplan for LIT Moylish Campus,Limerick Institute of Technology,,0,1,1,,0,0.04471803702567624
+IE_581f461a519ea38b9253c82b9a94d13e327fcf114903cd05b4beeddbb8292768_1,Doolin Camping and Caravan Park Playground Installation,Shannon Crematorium,,0,1,1,1.0,0,0.04619609239673947
+IE_3b62c18e9289f28c7996c20c3d6230b6f1748ddba3e81f5c971496994bf9f9a6_1,"Supply of Library Books and AV - Supply of Library Books and Audio Visual Material for Offaly County Council, Laois County Council, Westmeath County Council and Longford County Council",Offaly County Council,,0,1,1,1.0,0,0.04660121673620478
+IE_37e1c84918becde2c63291d1804f7151380e65194d591bb7cb7fdfe9f65d19aa_1,Construction of a Recreation Centre,Shannon Crematorium,,0,1,1,1.0,0,0.04662830604915871
+IE_29ef3eab9a3bd5881223144582f52c982bb9309105250cc8db9d990e0926117d_1,"Short descriptionSWS Electrical Upgrade Works - 2204 Caherconlish NS SWS 2022 Electrical UpgradeDetailed descriptionThe decommissioning and removal of sections of existing electrical services and replacement with a new electrical install, including all associated groundworks and reinstatement works.",Caherconlish National School,,0,1,1,1.0,0,0.04678487495048112
+IE_fb5ac819628f6838fc30be4e76dee503dadd909f640fa326007b0bbf6250485c_1,"Thurles CBS Secondary School, Three Classroom Building",Thurles CBS Secondary School,,0,1,1,1.0,0,0.04956901429969604
+IE_762a0b599820d8b8f7934b4327163652b95144e9b9b0c523bff05f68e97aada8_1,Furbo Community Pitch,"Menlough NS,Board of Management",,0,1,1,1.0,0,0.05557249875887925
+IE_9b00dfbf6f2f94af1e2b1e9dcb3be6425113fdef0bb18fd22b3bb63e5b729bb6_1,Construction of New Community Building and Associated works at Philips Green,Durrus & District Community Council Ltd,,0,1,1,1.0,0,0.056462762282660124
+IE_a5b25b07b3d751b90979b1709ab917e6c3838684ed2050e2f89645fc6553ef28_1,WDTP Final Review,Western Development Tourism Programme,,0,1,1,1.0,0,0.05655965924814646
+IE_0bee8026a38220cdfd6bd58ac09cd130aea7516bea7a47e8a09377be40acd1e1_1,Nobber Amenity Park - Public amenity park with associated site works,Nobber Amenity Park Committee,,0,1,1,1.0,0,0.05863972146605202
+EU_2fac0d8b5da4c9b536dcd8b1e38e9ddca0bdc87dcb0cfebbcde4f7d0994bbb01_1,Railway Advisory Services Panel 2012.,Iarnrod Eireann - Irish Rail,,0,1,1,1.0,0,0.05945169471310979
+IE_2491ba454751b9b4413ec09c3034d4b9a03a63a3e94d5074615e89b2e617c10a_1,"Refurbishment Works at 56 New Street, Carrick on Suir, Co. Tipperary, Ireland",Waterford Regional Youth Service,,0,1,1,1.0,0,0.059677536844206014
+IE_ed6d4bfc636632bacb24f40b84512fe1cf3ce2067dae5778afd3499b3d3991eb_1,"Fenit Viaduct Repairs Stage 5, Fenit Harbour, Co Kerry",NEWKD,,0,1,1,1.0,0,0.06035757676805108
+IE_edd2ced6c6b3dcd6b80518ad94979838e7a539273cd0e6392635dcb686560aaa_1,St Mary's New Ross SWS2016 - Electrical Summer Works - 2016,St Mary's Secondary School,,0,1,1,1.0,0,0.062025069113327086
+IE_64e369708e01697c536ca97aa0646a032bf2efe8f70eb18f9315e476721c571d_1,"Our Lady of Fatima NS - New 16 Classroom Generic Repeat Design (GRD) Primary School, Barntown, Co. Wexford",Our Lady of Fatima National School,,0,1,1,1.0,0,0.06312444768112206
+IE_171d1f97787ff33fefac34ed28ef2019a1b0b4efc3bc0199e42f8db778957829_1,Additional Accommodation at St. Peters National School,St. Peters National School (Dungourney),,0,1,1,1.0,0,0.06350048857809405
+IE_5c97d86f95827ec3a1c3143add39047978f76fce43616e64707005ce11e62901_1,Annual Tenders 2005,Waterford City Council,,0,1,1,1.0,0,0.06501411705765045
