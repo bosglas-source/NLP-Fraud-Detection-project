@@ -12,6 +12,17 @@ Public Procurement Collusion & Fraud Detector
 [Brian O'Sullivan]
 
 Developed for Bologna Buisness School - Master's in AI & Innovation Management
+
+---
+
+## 🤖 0. AI Assistance & Tooling
+
+In the spirit of transparency and modern data science workflows, our team utilized LLMs as pair-programming assistants to accelerate the development pipeline.
+
+* **AI Tools Utilized:** Google Gemini, Anthropic Claude, and OpenAI Codex.
+* **Scope of Assistance:** These tools were strictly used for coding tasks, including drafting Python boilerplate, constructing complex Regular Expressions for text cleaning (`spaCy` / `pandas`), troubleshooting library dependency errors, and generating plot formatting code for our evaluation visualizations.
+* **Human Oversight:** All core architectural decisions, data labeling logic, mathematical feature engineering, model selection, and final evaluations were independently designed, reviewed, and validated by the human project team.
+
 ---
 
 ## 1. Project Overview
