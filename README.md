@@ -122,7 +122,7 @@ graph TD
 
 ---
 
-## 📂 8. Repository Structure Diagram
+## 📂 6. Repository Structure Diagram
 
 ```text
 ├── .gitignore          # Hides local large .csv and .npy files
