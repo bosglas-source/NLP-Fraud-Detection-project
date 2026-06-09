@@ -127,37 +127,28 @@ graph TD
 ```text
 ├── .gitignore          # Hides local large .csv and .npy files
 ├── README.md           # Project documentation and architecture
-├── requirements.txt    # Frozen virtual environment package specifications
-├── analyze_contract.py # Deployment CLI hook: `python analyze_contract.py --id XYZ`
-│
-├── data/               # Ignored by Git (except safe mock samples)
+├── data/               
 │   ├── sample_contracts.json       # Safe mock rows for GitHub viewers
 │   ├── contracts_ie_clean.csv      # (Local) Full preprocessed dataset
-│   ├── ner_features.csv            # (Local) Extracted entities and address flags
-│   └── embeddings.npy              # (Local) Deep MPNet dense vectors
-│
-├── notebooks/          # Step-by-step modular pipeline notebooks
-│   ├── 01_preprocessing_eda.ipynb          # Phase 2: Cleaning, flattening, label definitions
-│   ├── 02_features_embeddings_clean.ipynb  # Phase 3: TF-IDF, MPNet embeddings, Cosine Similarity
-│   ├── 02b_ner_extraction.ipynb            # Phase 3: spaCy NER extraction & entity overlaps
-│   ├── 03_detection_models.ipynb           # Phase 4: Logistic Regression, Isolation Forest, Error Analysis
-│   └── 04_rag_explainability.ipynb         # Phase 5: FAISS vector DB & LangChain risk reports
-│
-├── src/                # Reusable modular library scripts
+│   ├── ner_features.csv                 
+├── notebooks/          
+│   ├── 01_preprocessing_eda.ipynb          
+│   ├── 02_features_embeddings_clean.ipynb
+│   ├── 03_detection_models.ipynb           
+│   └── 04_rag_explainability.ipynb        
+├── src/                
 │   ├── pipeline.py     # Global utility cleaning and data transforms
-│   └── rag.py          # Class definitions for the LangChain structure
-│
-├── models/             # Serialized classical ML models and scaling artifacts
+├── models/             
 │   ├── tfidf_vectorizer.joblib
 │   ├── structured_scaler.joblib
 │   ├── model_logreg_tfidf.joblib
 │   └── model_logreg_tfidf_structured.joblib
 │
 └── results/            # Proof of Work: Evaluation metrics and audit reports
-    ├── model_comparison.csv            # Final precision, recall, and PR-AUC scores
+  ├── model_comparison.csv            # Final precision, recall, and PR-AUC scores
     ├── precision_recall_curves.png     # Visual evaluation metrics
+    ├── anomaly_scores.csv              # Isolation Forest outlier rankings
     ├── false_positives_sample.csv      # Error analysis diagnostics
     ├── false_negatives_sample.csv      # Error analysis diagnostics
-    ├── risk_scores.png                 # Anomaly score distributions
     ├── retrieved_contexts.csv          # Legal text fetched by FAISS
-    └── risk_report_demo.json           # Final LLM Output
+    └── risk_report_demo.json           # Final RAG LLM Output
