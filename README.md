@@ -11,8 +11,7 @@ Public Procurement Collusion & Fraud Detector
 
 [Brian O'Sullivan]
 
-
-Developed for Bologna Buisness School - Master's in AI & Innovation Management
+## Developed for Bologna Buisness School - Master's in AI & Innovation Management
 
 ---
 
