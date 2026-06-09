@@ -65,7 +65,7 @@ Our pipeline focuses on identifying specific "red flags" defined by procurement 
 | **Classification Models** | `LogisticRegression` (TF-IDF & Structured Features) | Module 2: Classical Classification |
 | **Anomaly Detection** | `IsolationForest` (on Embeddings) | Module 2 & 3: Unsupervised Landscapes |
 | **NER Extraction** | `spaCy` (`en_core_web_trf` Transformer Pipeline) | Module 3: Sequence Labeling |
-| **RAG Pipeline** | `LangChain`, `FAISS`, `OpenAI` (`gpt-4o-mini`) | Module 4: Generative Frameworks |
+| **RAG Pipeline** | `LangChain`, `FAISS` | Module 4: Generative Frameworks |
 | **Structured Output** | `Pydantic` (JSON Schema Constraints) | Module 4: Production LLM Design |
 | **Evaluation Framework** | `scikit-learn` metrics (PR-AUC, Precision, Recall) | Module 4 & 5: Validation |
 
