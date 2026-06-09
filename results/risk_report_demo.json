@@ -1,0 +1,41 @@
+{
+  "contract_id": "EU_cda2cf0296cb4f96bced16867490184de1b14eb165ce7c812727969f4390edeb_1",
+  "title": "Pelvic Floor and Endo Anal Ultrasound",
+  "buyer_name": "Health Service Executive (HSE)",
+  "risk_score": 10,
+  "risk_level": "high",
+  "risk_factors": [
+    "single_bid",
+    "copy_paste_description",
+    "embedding_anomaly",
+    "short_tender_period_observed_but_not_in_main_label"
+  ],
+  "retrieved_context": [
+    {
+      "source": "NLP similarity red flag - copy-paste descriptions",
+      "topic": "copy paste",
+      "score": 0.12048427307732341,
+      "text": "Near-identical contract descriptions across different buyers can indicate reused templates, centralized procurement, framework agreements, or potentially tailored specifications. High cosine similarity should be treated as an investigative cue rather than a fraud conclusion. Human review should compare contract titles, buyers, CPV category, publication dates, and description details."
+    },
+    {
+      "source": "Model evaluation guidance - imbalanced labels",
+      "topic": "evaluation",
+      "score": 0.0,
+      "text": "Procurement risk labels are imbalanced and partly missing. Precision-recall AUC is more informative than accuracy because reviewers care about how many flagged cases are useful and how many suspicious cases are missed. Proxy labels are useful for modeling, but they should be discussed as noisy indicators."
+    },
+    {
+      "source": "Unsupervised anomaly detection guidance",
+      "topic": "anomaly detection",
+      "score": 0.0,
+      "text": "Embedding-space anomalies are contracts whose language or metadata differ from the broader corpus. Isolation Forest flags unusual records without using fraud labels, so its results should be used to prioritize review rather than to classify misconduct. Stronger concern arises when anomaly flags overlap with interpretable procurement indicators."
+    }
+  ],
+  "explanation": "This contract receives a high risk rating because it matches the following proxy indicators: single bid, copy paste description, embedding anomaly, short tender period observed but not in main label. The retrieved guidance frames these signals as review triggers, not proof of wrongdoing. A human reviewer should compare the model flags with the original tender documents, buyer history, and market context.",
+  "human_review_questions": [
+    "Was the tender specification broad enough to allow meaningful competition?",
+    "Are the highly similar descriptions explained by a legitimate shared template or framework agreement?",
+    "What language or metadata makes this notice unusual compared with the corpus?",
+    "Can the risk signal be verified against the original tender notice and award documentation?"
+  ],
+  "disclaimer": "Academic prototype only. This report identifies review priorities, not evidence of fraud or legal wrongdoing."
+}
