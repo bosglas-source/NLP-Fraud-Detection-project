@@ -21,7 +21,7 @@ In the spirit of transparency and modern data science workflows, our team utiliz
 
 * **AI Tools Utilized:** Google Gemini, Anthropic Claude, and OpenAI Codex.
 * **Scope of Assistance:** These tools were strictly used for coding tasks, including drafting Python boilerplate, constructing complex Regular Expressions for text cleaning (`spaCy` / `pandas`), troubleshooting library dependency errors, and generating plot formatting code for our evaluation visualizations.
-* **Human Oversight:** All core architectural decisions, data labeling logic, mathematical feature engineering, model selection, and final evaluations were independently designed, reviewed, and validated by the human project team.
+* **Human Oversight:** All core architectural decisions, data labeling logic, mathematical feature engineering, model selection, and final evaluations were independently designed, reviewed, and validated by the project team.
 
 ---
 
