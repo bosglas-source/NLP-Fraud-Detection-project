@@ -133,7 +133,8 @@ graph TD
 │   ├── ner_features.csv                 
 ├── notebooks/          
 │   ├── 01_preprocessing_eda.ipynb          
-│   ├── 02_features_embeddings_clean.ipynb
+│   ├── 02a_features_embeddings_clean.ipynb
+│   ├── 02b_ner_extraction.py
 │   ├── 03_detection_models.ipynb           
 │   └── 04_rag_explainability.ipynb        
 ├── src/                
